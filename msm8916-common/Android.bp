@@ -20,6 +20,17 @@ soong_namespace {
 }
 
 android_app_import {
+	name: "WfdService",
+	owner: "motorola",
+	apk: "proprietary/system/priv-app/WfdService/WfdService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+}
+
+android_app_import {
 	name: "QtiTelephonyService",
 	owner: "motorola",
 	apk: "proprietary/vendor/app/QtiTelephonyService/QtiTelephonyService.apk",
@@ -89,5 +100,11 @@ dex_import {
 	owner: "motorola",
 	jars: ["proprietary/vendor/framework/qcnvitems.jar"],
 	soc_specific: true,
+}
+
+dex_import {
+	name: "WfdCommon",
+	owner: "motorola",
+	jars: ["proprietary/system/framework/WfdCommon.jar"],
 }
 
